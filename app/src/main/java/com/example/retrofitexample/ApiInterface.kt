@@ -4,8 +4,9 @@ import android.telecom.Call
 import retrofit2.http.GET
 
 
-interface ApiInterface {
-//https://jsonplaceholder.typicode.com/posts
-    //@GET(value = "posts")
-    //fun getData() : Call<List<MyDataItem>>
+ interface ApiInterface {
+
+    @GET("posts")
+    fun getData(): retrofit2.Call<List<MyDataItem>>
+
 }

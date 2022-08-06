@@ -1,11 +1,9 @@
 package com.example.retrofitexample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.internal.GsonBuildConfig
+import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class  MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +15,7 @@ class  MainActivity : AppCompatActivity() {
 
     private fun getData() {
         //TODO Call THE API Here
-        //val retrofitBuilder = Retrofit.Builder().converterFactories()
+
+        val retrofit = Retrofit.Builder().baseUrl("https://jsonplaceholder.typicode.com/").addConverterFactory(GsonConverterFactory.create())
     }
 }
